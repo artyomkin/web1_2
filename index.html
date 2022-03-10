@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Колосков Алексей P33212</title>
+</head>
+
+<body>
+<header>
+    <div class="content">
+        <div class="header_wrapper">
+
+            <div class="left">
+
+                <span class="name">Колосков Алексей и Андронова Мария</span>
+                <span class="group">P33212</span>
+                <span class="variant">Вариант 31060</span>
+
+            </div>
+
+            <div class="right">
+
+                <span class="hidden">Текущее время -<span id="current_time"></span></span>
+                <br>
+                <span class="hidden"> Время работы скрипта -<span id="working_time"></span>мкс</span>
+
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<div class="content">
+    <div class="content_wrapper">
+        <div class="left">
+            <div class="coordinates">
+                <form action="#" id="coordinates_form">
+
+                    <div class="field">
+
+                        <label for="x">Введите X</label>
+                        <div class="option">
+                            <input type="radio" id="x-4" class="x required number" value="-4"> <label for="x-4">-4</label>
+                        </div>
+                        <div class="option">
+                                                    <input type="radio" id="x-3" class="x required number" value="-3"> <label for="x-3">-3</label>
+
+                        </div>
+                        <div class="option">                        <input type="radio" id="x-2" class="x required number" value="-2"> <label for="x-2">-2</label>
+</div>
+                        <div class="option">                        <input type="radio" id="x-1" class="x required number" value="-1"> <label for="x-1">-1</label>
+</div>
+                        <div class="option">                        <input type="radio" id="x0" class="x required number" value="0"> <label for="x0">0</label>
+</div>
+                        <div class="option">                        <input type="radio" id="x1" class="x required number" value="1"> <label for="x1">1</label>
+</div>
+                        <div class="option">                        <input type="radio" id="x2" class="x required number" value="2"> <label for="x2">2</label>
+</div>
+                        <div class="option">                        <input type="radio" id="x3" class="x required number" value="3"> <label for="x3">3</label>
+</div>
+                        <div class="option">                        <input type="radio" id="x4" class="x required number" value="4"> <label for="x4">4</label>
+</div>
+                        <span class="error_message"></span>
+
+                    </div>
+
+                    <div class="field">
+
+                        <br>
+                        <label for="y">Введите Y</label>
+                        <input type="text" id="y" class="required number">
+                        <span class="error_message"></span>
+
+                    </div>
+
+                    <div class="field">
+
+                        <br>
+                        <label for="R">Введите R</label>
+                        <select name="R" id="R">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <span class="error_message"></span>
+
+                    </div>
+
+                    <br>
+                    <input type="submit" value="Нажать" id="submit_request">
+
+                </form>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="chart">
+                <div class="axises">
+
+                    <div class="x_axis axis">
+
+                        <div class="arrow"></div>
+                        <div class="line"></div>
+                        <div class="marks_wrapper">
+
+                            <div class="outer_marks">
+
+                                <div class="mark top_mark">
+
+                                    <div class="serif"></div>
+                                    <div class="coordinate">R</div>
+
+                                </div>
+
+                                <div class="inner_marks">
+
+                                    <div class="mark top_mark">
+
+                                        <div class="serif"></div>
+                                        <div class="coordinate">R/2</div>
+
+                                    </div>
+
+                                    <div class="mark bot_mark">
+
+                                        <div class="serif"></div>
+                                        <div class="coordinate">-R/2</div>
+
+                                    </div>
+                                </div>
+
+                                <div class="mark bot_mark">
+
+                                    <div class="serif"></div>
+                                    <div class="coordinate">-R</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="y_axis axis">
+
+                        <div class="arrow"></div>
+                        <div class="line"></div>
+                        <div class="marks_wrapper">
+
+                            <div class="outer_marks">
+
+                                <div class="mark top_mark">
+
+                                    <div class="serif"></div>
+                                    <div class="coordinate">R</div>
+
+                                </div>
+
+                                <div class="inner_marks">
+
+                                    <div class="mark top_mark">
+
+                                        <div class="serif"></div>
+                                        <div class="coordinate">R/2</div>
+
+                                    </div>
+
+                                    <div class="mark bot_mark">
+
+                                        <div class="serif"></div>
+                                        <div class="coordinate">-R/2</div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="mark bot_mark">
+
+                                    <div class="serif"></div>
+                                    <div class="coordinate">-R</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="circle"></div>
+                <div class="triangle"></div>
+                <div class="rectangle"></div>
+                <div id="dots"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="table">
+        <table>
+            <thead>
+
+            <td class="top left">x</td>
+            <td class="top">y</td>
+            <td class="top">R</td>
+            <td class="top right">Попадание</td>
+
+            </thead>
+
+            <tbody id="results"></tbody>
+
+            <tfoot>
+
+            <td class="left bot"></td>
+            <td class="bot"></td>
+            <td class="bot"></td>
+            <td class="right bot"></td>
+
+            </tfoot>
+        </table>
+
+        <div class="pagination">
+
+            <span id="pag_prev" class="hidden">Previous</span>
+            <span id="pag_next" class="hidden">Next</span>
+
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="Result.js"></script>
+<script src="script.js"></script>
+
+</html>
